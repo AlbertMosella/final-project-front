@@ -2,7 +2,7 @@
 import React, { useState, createContext, useContext, ReactNode } from 'react'; // Corrected import
 // import { ThemeType } from './themes'; // ThemeType is not strictly needed here as theme is a string
 
-interface ThemeContextType {
+export interface ThemeContextType { // Add export here
   theme: string;
   toggleTheme: () => void;
 }
