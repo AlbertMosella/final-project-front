@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { ThemeType } from "../../themes";
 
-const FooterContainer = styled.div`
+const FooterContainer = styled.div<{theme: ThemeType}>`
   width: 100%;
   height: 600px;
-  background-color: black;
-  color: white;
+  background-color: ${props => props.theme.footerBackground};
+  color: ${props => props.theme.secondaryText};
   justify-content: center;
   text-align: center;
   align-items: center;
@@ -14,7 +15,7 @@ const FooterContainer = styled.div`
   .decoration-line {
     width: 275px;
     height: 4px;
-    background: linear-gradient(90deg, #ffac12 0%, #000000 94.96%);
+    background: ${props => props.theme.footerAccent};
     border-radius: 2px;
   }
 

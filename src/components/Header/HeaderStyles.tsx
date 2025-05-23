@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import { ThemeType } from "../../themes";
 
-const HeaderContainer = styled.div`
+const HeaderContainer = styled.div<{theme: ThemeType}>`
   width: 100vw;
   height: 80px;
-  background-color: black;
+  background-color: ${props => props.theme.headerBackground};
 
   header {
     margin: 0;
@@ -22,7 +23,7 @@ const HeaderContainer = styled.div`
   }
 
   h1 {
-    color: white;
+    color: ${props => props.theme.secondaryText};
     text-align: center;
     font-size: 1.2em;
   }
@@ -47,23 +48,27 @@ const HeaderContainer = styled.div`
         width: 80px;
         height: 30px;
         border-top-right-radius: 20px;
-        background: orange;
+        background: ${props => props.theme.accent};
+        color: ${props => props.theme.buttonText};
         font-size: 1em;
         text-align: left;
         border: none;
         cursor: pointer;
+        &:hover {
+          background: ${props => props.theme.accentHover};
+        }
       }
     }
 
     a {
-      color: white;
+      color: ${props => props.theme.secondaryText};
       text-decoration: none;
       font-size: 1.2em;
       transition: 0.3s;
     }
 
     a:hover {
-      color: #dedc8a;
+      color: ${props => props.theme.accentHover};
     }
   }
 `;

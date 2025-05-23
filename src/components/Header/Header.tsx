@@ -1,6 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { logOutActionCreator } from "../../redux/features/userSlice";
 import { useAppDispatch } from "../../redux/hooks";
+import ThemeToggleButton from "../ThemeToggleButton/ThemeToggleButton"; // Adjusted path
 import HeaderContainer from "./HeaderStyles";
 
 const Header = () => {
@@ -36,6 +37,9 @@ const Header = () => {
                   <button>Login</button>
                 </NavLink>
               )}
+            </li>
+            <li>
+              <ThemeToggleButton />
             </li>
           </ul>
         </nav>

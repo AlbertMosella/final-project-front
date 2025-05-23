@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { ThemeType } from "../../themes";
 
-const ButtonContainer = styled.div`
-  background-color: white;
+const ButtonContainer = styled.div<{theme: ThemeType}>`
+  background-color: ${props => props.theme.componentBackground};
   display: flex;
   flex-direction: column;
   width: 315px;
@@ -16,7 +17,8 @@ const ButtonContainer = styled.div`
   button {
     width: 100%;
     height: 100%;
-    background: white;
+    background: ${props => props.theme.buttonBackground};
+    color: ${props => props.theme.buttonText};
     cursor: pointer;
 
     border: none;
@@ -25,8 +27,8 @@ const ButtonContainer = styled.div`
   }
 
   button:hover {
-    background: #ab001a;
-    color: white;
+    background: ${props => props.theme.buttonHoverBackground};
+    color: ${props => props.theme.buttonHoverText};
   }
 
   @media (min-width: 700px) {
