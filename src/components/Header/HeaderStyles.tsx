@@ -3,7 +3,7 @@ import styled from "styled-components";
 const HeaderContainer = styled.div`
   width: 100vw;
   height: 80px;
-  background-color: black;
+  background-color: red;
 
   header {
     margin: 0;
